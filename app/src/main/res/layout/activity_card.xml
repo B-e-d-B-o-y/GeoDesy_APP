@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Создание карточки ГГС"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- Основные данные -->
+            <EditText
+                android:id="@+id/etLat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Широта (от -90 до 90)"
+                android:inputType="numberDecimal|numberSigned" />
+
+            <EditText
+                android:id="@+id/etLon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Долгота (от -180 до 180)"
+                android:inputType="numberDecimal|numberSigned" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Субъект РФ *" />
+
+            <Spinner
+                android:id="@+id/spFederalSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etSignHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Высота знака (м) ≥ 0"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/etSignHeightAbove"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Высота центра (м)"
+                android:inputType="numberDecimal|numberSigned" />
+
+            <EditText
+                android:id="@+id/etExecuteDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Дата (YYYY-MM-DD)"
+                android:inputType="date" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Фотографии (минимум 2) *"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnPickPhotos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Выбрать фото" />
+
+            <TextView
+                android:id="@+id/tvPhotosCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Выбрано: 0" />
+
+            <!-- Тип знака и его свойства -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Тип знака *"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spTypeOfSign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Динамические свойства знака -->
+            <LinearLayout
+                android:id="@+id/llSignProperties"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp">
+
+                <TextView
+                    android:id="@+id/tvProp1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/spProp1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvProp2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/spProp2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Состояние компонентов *"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Наружный знак" />
+
+            <Spinner
+                android:id="@+id/spOutdoorSign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Монолит 1" />
+
+            <Spinner
+                android:id="@+id/spMonolithOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Монолит 2" />
+
+            <Spinner
+                android:id="@+id/spMonolithTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Монолиты 3 и 4" />
+
+            <Spinner
+                android:id="@+id/spMonolithThreeFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Окопка" />
+
+            <Spinner
+                android:id="@+id/spTrench"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Опознавательный столб" />
+
+            <Spinner
+                android:id="@+id/spIdentificationPillar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ОРП 1" />
+
+            <Spinner
+                android:id="@+id/spOrpOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ОРП 2" />
+
+            <Spinner
+                android:id="@+id/spOrpTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Спутниковые наблюдения" />
+
+            <Spinner
+                android:id="@+id/spSatelliteSurveillance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Отправить карточку" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</FrameLayout>

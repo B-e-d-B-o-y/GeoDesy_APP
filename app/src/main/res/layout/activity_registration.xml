@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Регистрация"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp"
+                android:layout_gravity="center"/>
+
+            <!-- Этап 1: Данные -->
+            <LinearLayout
+                android:id="@+id/llStep1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText android:id="@+id/etFirstName" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Имя" android:inputType="textPersonName"/>
+                <EditText android:id="@+id/etSecondName" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Фамилия" android:inputType="textPersonName"/>
+                <EditText android:id="@+id/etThirdName" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Отчество" android:inputType="textPersonName"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Пол" android:layout_marginTop="8dp"/>
+                <RadioGroup android:id="@+id/rgSex" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <RadioButton android:id="@+id/rbMale" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Мужской" android:checked="true"/>
+                    <RadioButton android:id="@+id/rbFemale" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Женский"/>
+                </RadioGroup>
+
+                <EditText android:id="@+id/etRegEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Email" android:inputType="textEmailAddress"/>
+                <EditText android:id="@+id/etRegPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Пароль" android:inputType="textPassword"/>
+
+                <Button android:id="@+id/btnRegNext" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Далее" android:layout_marginTop="16dp"/>
+            </LinearLayout>
+
+            <!-- Этап 2: Код подтверждения -->
+            <LinearLayout
+                android:id="@+id/llStep2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Код подтверждения отправлен на вашу почту" android:gravity="center" android:layout_marginBottom="16dp"/>
+                <EditText android:id="@+id/etConfirmCode" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Код" android:inputType="number" android:maxLength="6" android:gravity="center" android:textSize="24sp"/>
+                <Button android:id="@+id/btnRegVerify" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Завершить регистрацию" android:layout_marginTop="16dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/regProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+</FrameLayout>
